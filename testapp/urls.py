@@ -5,6 +5,6 @@ from django.conf.urls.static import static
 from . import views
 # The path is empty so it goes to the root home page.
 urlpatterns = [
-    path('', views.image_upload_view, name='image_upload_view')
-    
+    path('', views.image_upload_view, name='image_upload_view'),
+    path('ready/', views.readyToDownload, name='readyToDownload'),
 ]

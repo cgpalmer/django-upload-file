@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- I need a link in here that will let me download a files -->
+
+
+
+{% for i in image %}
+<p>{{i.title}}</p>
+<a href="{% url 'download_image' i.id %}">{{i.image}}</a>
+{% endfor %}
+{% endblock %}

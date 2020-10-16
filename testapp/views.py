@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect 
 from .forms import *
+from .models import Image
+import datetime
 
 
 
@@ -15,3 +17,14 @@ def image_upload_view(request):
     else:
         form = ImageForm()
     return render(request, 'testapp/testapp.html', {'form': form})
+
+
+    def readyToDownload(request):
+        image = Image.objects.order_by('id')
+        # download = datetime.datetime.now()
+        # download_time = str(download)
+        context = {
+            'image': image
+        }
+        return render(request, 'testapp/success.html', context)
+
