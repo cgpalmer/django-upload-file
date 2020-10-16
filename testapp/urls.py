@@ -7,4 +7,5 @@ from . import views
 urlpatterns = [
     path('', views.image_upload_view, name='image_upload_view'),
     path('ready/', views.readyToDownload, name='readyToDownload'),
+    path('download/<i_id>', views.download_image, name='download_image'),
 ]
