@@ -28,6 +28,8 @@ def readyToDownload(request):
     return render(request, 'testapp/success.html', context)
 
 def download_image(request, i_id):
+
+    #https://www.youtube.com/watch?v=phHM6glUURw
     image = Image.objects.get(pk=i_id)
     image.downloaded = True
     image.save()
